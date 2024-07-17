@@ -7,10 +7,6 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-const START_VALUE = 1;
-const END_VALUE = 100;
-const POW = 2;
-
 const inputValue = prompt("Please enter some number");
 
 if (inputValue === null) {
@@ -32,7 +28,7 @@ else {
     let resultMessage = 'prime number';
     const result = [];
     for (let i = 2; i <= absInt; i++) {
-      
+
       if (absInt % i === 0) {
         result.push(i);
 
