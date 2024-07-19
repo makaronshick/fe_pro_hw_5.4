@@ -18,27 +18,23 @@ else if (!inputValue.trim()) {
 else if (isNaN(inputValue)) {
   alert("You entered not a number");
 } 
+else if (!Number.isInteger(+inputValue)) {
+  alert("A floating point number cannot be prime");
+} 
+else if (+inputValue <= 1) {
+  alert("A negative numbers, 1 and 0 are not prime numbers");
+} 
 else {
-  const absInt = Math.abs(parseInt(inputValue));
+  const num = Number(inputValue);
+  let resultMessage = "prime number";
 
-  if (absInt <= 1) {
-    alert("1 and 0 are not prime numbers");
-  } 
-  else {
-    let resultMessage = 'prime number';
-    const result = [];
-    for (let i = 2; i <= absInt; i++) {
+  for (let i = 2; i <= num; i++) {
 
-      if (absInt % i === 0) {
-        result.push(i);
-
-        if (result.length > 1) {
-          resultMessage = 'not prime number';
-          break;
-        } 
-      }
+    if (num % i === 0 && i !== num) {
+      resultMessage = "not prime number";
+      break;
     }
-
-    alert(`${absInt} is ${resultMessage}`);
   }
+
+  alert(`${num} is ${resultMessage}`);
 }
